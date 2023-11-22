@@ -1,0 +1,52 @@
+.container{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.title{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.title h2{
+    font-size: 1.2rem;
+}
+
+.title a{
+    background-color: #2a7ae4;
+    color: #fff;
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+}
+
+.produto{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 80%;
+}
+
+.card_container{
+    margin-bottom: 1rem;
+}
+
+.actions{
+    padding: 10px;
+    position: relative;
+    top: 40px;
+    right: -70px;
+}
+
+.actions svg{
+    background-color: #ddd;
+    fill: #a1a1a1;
+    margin: 10px;
+}
+
+.actions svg:hover{
+    background-color: #aaa;
+    fill: #f1f1f1;
+}

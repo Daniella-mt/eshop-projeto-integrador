@@ -1,0 +1,31 @@
+.container{
+    text-align: center;
+}
+
+.container h2{
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.container form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 30%;
+}
+
+.container form input[type="submit"]{
+    background-color: #2a7ae4;
+    border: none;
+    color: #fff;
+    font-size: 0.7rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+}

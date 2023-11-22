@@ -1,0 +1,37 @@
+.section_container{
+    margin: 1rem auto;
+    width: 80%;
+}
+
+.section_title{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    max-width: 95%;
+}
+
+.section_title a{
+    color: #2a7ae4;
+    text-decoration: none;
+}
+
+.section_title a::after{
+    content: "\2192";
+    margin-left: 5px;
+}
+
+.produtos{
+    display: flex;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.card_container{
+    position: relative;
+}
+
+.card_container button{
+    position: absolute;
+    top: 5%;
+    right: 18%;
+}

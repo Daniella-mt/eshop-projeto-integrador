@@ -1,0 +1,6 @@
+.pagina_padrao{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+}

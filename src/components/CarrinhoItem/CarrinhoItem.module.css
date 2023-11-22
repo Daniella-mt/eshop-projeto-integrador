@@ -1,0 +1,17 @@
+.carrinho_container{
+    display: flex;
+}
+
+.carrinho_container img{
+    font-size: 0.5rem;
+    width: 70px;
+}
+
+.item_info h2{
+    font-size: 0.5rem;
+    font-weight: 300;
+}
+
+.item_info span{
+    font-size: 0.75rem;
+}
