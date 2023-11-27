@@ -1,7 +1,5 @@
 import styles from './Footer.module.css';
 
-import LogoJoystick from '/sports.svg';
-import LogoTitulo from '/Texto.svg';
 
 const Footer = () => {
 	return (

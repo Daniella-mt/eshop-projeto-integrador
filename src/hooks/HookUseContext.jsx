@@ -31,7 +31,8 @@ export const HookUseContext = ({ children }) => {
                 body: createProduto
             }
         )
-        console.log('produto novo criado!')
+        console.log('produto novo criado!');
+        console.log(createProduto);
     }
 
     const getAllCategories = async () => {

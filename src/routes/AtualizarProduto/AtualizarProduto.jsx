@@ -45,11 +45,13 @@ const AtualizarProduto = () => {
         e.preventDefault();
 
         // navigate('/admin');
+        
+        
     }
 
     return (
         <div className={styles.form_container}>
-            <form>
+            <form onSubmit={handlingSubmit}>
                 <h2>Atualizar produto: </h2>
                 <FieldInput
                     label={'Url da Imagem'}

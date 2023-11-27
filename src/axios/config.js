@@ -8,7 +8,8 @@ export const fetchProducts = axios.create({
 });
 
 export const fetchCategories = axios.create({
-    baseURL: 'https://fakestoreapi.com/products/categories',
+    // baseURL: 'https://fakestoreapi.com/products/categories',
+    baseURL: 'http://ajax1.infinityfreeapp.com/conexao/',
     headers: {
         "Content-Type": "application/json"
     }
