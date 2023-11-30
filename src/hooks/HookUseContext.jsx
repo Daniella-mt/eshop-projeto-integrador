@@ -45,7 +45,7 @@ export const HookUseContext = ({ children }) => {
 
     const getAllProducts = async () => {
         // const response = await fetchProducts.get('/products');
-         const response = await fetchProducts.get();
+         const response = await fetchProducts.get('/produtos');
 
         const data = response.data;
         setListaProdutos(data);
