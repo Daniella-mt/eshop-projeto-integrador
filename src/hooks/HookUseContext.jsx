@@ -36,7 +36,7 @@ export const HookUseContext = ({ children }) => {
     }
 
     const getAllCategories = async () => {
-        const response = await fetchCategories.get();
+        const response = await fetchCategories.get('/categories');
 
         const data = response.data;
 
@@ -51,7 +51,7 @@ export const HookUseContext = ({ children }) => {
     }
 
     const deleteProduct = async (id) => {
-        await fetchProducts.delete(`/produtos/${id}`);
+        await fetchProducts.delete(`products/${id}`);
 
         const filteredProdutos = listaProdutos.filter((produto) =>
             produto.id != id
@@ -68,7 +68,7 @@ export const HookUseContext = ({ children }) => {
             descricao,
             userId: 1
         }
-        await fetchProducts.put(`/produtos/${id}`,
+        await fetchProducts.put(`/products/${id}`,
             {
                 body: updatedProduto
             }
