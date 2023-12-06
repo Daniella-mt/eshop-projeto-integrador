@@ -4,10 +4,10 @@ import styles from './Card.module.css';
 
 const Card = ({ produto, url }) => {
 
-  const { image, title, price } = produto;
-  const newPrice = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(
-    price,
-  )
+  const { image, nome, preco } = produto;
+  // const newPrice = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(
+  //   price,
+  // )
 
   return (
     <div className={styles.container_card}>
@@ -15,8 +15,8 @@ const Card = ({ produto, url }) => {
         <img src={image} />
       </div>
       <div className={styles.card_info}>
-        <h2>{title}</h2>
-        <span>{newPrice}</span>
+        <h2>{nome}</h2>
+        <span>{preco}</span>
         <Link to={url}>Ver produto</Link>
       </div>
     </div>

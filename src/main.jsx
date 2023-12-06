@@ -16,10 +16,11 @@ import AtualizarProduto from './routes/AtualizarProduto/AtualizarProduto.jsx';
 import PaginaUsuario from './routes/PaginaUsuario/PaginaUsuario.jsx';
 
 import './index.css';
+import ListaTodosProdutos from './routes/ListaTodosProdutos/ListaTodosProdutos.jsx';
 
 const router = createBrowserRouter([
 	{
-		element: <App />,
+		element: <App/>,
 		children: [
 			{
 				path: '/',
@@ -38,7 +39,7 @@ const router = createBrowserRouter([
 				element: <Admin/>
 			},
 			{
-				path:'produtos/:id/info',
+				path:'produtos/ALL/:id/info',
 				element: <Produto/>
 			},
 			{
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
 			{
 				path: '/usuario-logado',
 				element: <PaginaUsuario/>
+			},
+			{
+				path: '/produtos/ALL/:section',
+				element: <ListaTodosProdutos/>
 			}
 		]
 	}]);

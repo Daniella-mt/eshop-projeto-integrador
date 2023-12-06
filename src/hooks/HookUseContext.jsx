@@ -26,7 +26,7 @@ export const HookUseContext = ({ children }) => {
             userId: 1
         }
 
-        await fetchProducts.post('/produtos',
+        await fetchProducts.post('/produto/ALL',
             {
                 body: createProduto
             }
@@ -35,23 +35,24 @@ export const HookUseContext = ({ children }) => {
         console.log(createProduto);
     }
 
-    const getAllCategories = async () => {
-        const response = await fetchCategories.get('/categories');
+    // const getAllCategories = async () => {
+    //     const response = await fetchCategories.get('/categories');
 
-        const data = response.data;
+    //     const data = response.data;
 
-        setCategories(data);
-    }
+    //     setCategories(data);
+    // }
 
     const getAllProducts = async () => {
-        const response = await fetchProducts.get('/products');
+        const response = await fetchProducts.get('/produto/ALL');
 
-        const data = response.data;
+        const data = response.data.result.produtos;
+        
         setListaProdutos(data);
     }
 
     const deleteProduct = async (id) => {
-        await fetchProducts.delete(`products/${id}`);
+        await fetchProducts.delete(`produto/ALL/${id}`);
 
         const filteredProdutos = listaProdutos.filter((produto) =>
             produto.id != id
@@ -68,7 +69,7 @@ export const HookUseContext = ({ children }) => {
             descricao,
             userId: 1
         }
-        await fetchProducts.put(`/products/${id}`,
+        await fetchProducts.put(`/produto/ALL/${id}`,
             {
                 body: updatedProduto
             }
@@ -89,9 +90,9 @@ export const HookUseContext = ({ children }) => {
         getAllProducts();
     }, []);
 
-    useEffect(() => {
-        getAllCategories();
-    }, []);
+    // useEffect(() => {
+    //     getAllCategories();
+    // }, []);
 
     return (
         <DataContext.Provider
@@ -100,7 +101,7 @@ export const HookUseContext = ({ children }) => {
                 setUsuario,
                 consultaUsuario,
                 listaProdutos,
-                categories,
+                // categories,
                 itensCarrinho,
                 setItensCarrinho,
                 carrinhoVisivel,

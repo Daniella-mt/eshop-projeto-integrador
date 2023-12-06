@@ -14,22 +14,13 @@ const Produto = () => {
   const { id } = useParams();
 
   const [produto, setProduto] = useState({});
-  
+
   const [similares, setSimilares] = useState([]);
 
   const { listaProdutos } = useContext(DataContext);
 
-  // useEffect(() => {
-  //   const produtoUnico = listaProdutos.find((produto) => produto.id === Number(id));
-  //   setProduto(produtoUnico);
-  //   const prodSimilares = listaProdutos.filter((similar) =>
-  //     ((similar.section === produtoUnico.section) && similar.id != produtoUnico.id)
-  //   );
-  //   setSimilares(prodSimilares);
-  // }, [listaProdutos, similares, produto]);
-  
   useEffect(() => {
-    const produtoUnico = listaProdutos.find((produto) => produto.id === Number(id));
+    const produtoUnico = listaProdutos.find((produto) => produto.id === id);
     setProduto(produtoUnico);
   }, [listaProdutos, id]);
 
@@ -74,14 +65,18 @@ const Produto = () => {
             <div className={styles.similares_container}>
               <h2>Produtos similares</h2>
               <div className={styles.similares}>
-                {similares &&
-                similares.map((prod) =>
-                  <Card 
-                  url={`/produtos/${prod.id}/info`}
-                  key={prod.id} 
-                  produto={{...prod}}/>
-                )
-              }
+                {
+                  similares &&
+                  similares.map((prod) =>
+                    <Card
+                      url={`/produtos/ALL/${prod.id}/info`}
+                      key={prod.id}
+                      produto={{ ...prod }} />
+                  )
+                  ||
+
+                  <p>Não encontramos produtos de categoria semelhante</p>
+                }
               </div>
             </div>
           </div>
