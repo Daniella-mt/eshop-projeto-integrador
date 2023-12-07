@@ -2,7 +2,7 @@ import { useState, useContext, useEffect } from "react";
 
 import { useParams } from "react-router-dom";
 
-import { DataContext } from "../../hooks/HookUseContext";
+import { DataContext } from "../../Contexts/HookUseContext";
 
 import { RotatingLines } from 'react-loader-spinner';
 

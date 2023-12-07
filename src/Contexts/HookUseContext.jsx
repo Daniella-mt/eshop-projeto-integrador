@@ -1,6 +1,6 @@
 import { createContext, useState, useEffect } from "react";
 
-import { fetchProducts, fetchCategories } from '../axios/config';
+import { fetchProducts } from '../axios/config';
 
 export const DataContext = createContext();
 
@@ -8,11 +8,9 @@ export const HookUseContext = ({ children }) => {
 
     const [usuario, setUsuario] = useState({});
 
-    const [categories, setCategories] = useState([]);
-
     const [listaProdutos, setListaProdutos] = useState([]);
 
-    const [itensCarrinho, setItensCarrinho] = useState([]);
+    // const [itensCarrinho, setItensCarrinho] = useState([]);
 
     const [carrinhoVisivel, setCarrinhoVisivel] = useState(false);
 
@@ -34,14 +32,6 @@ export const HookUseContext = ({ children }) => {
         console.log('produto novo criado!');
         console.log(createProduto);
     }
-
-    // const getAllCategories = async () => {
-    //     const response = await fetchCategories.get('/categories');
-
-    //     const data = response.data;
-
-    //     setCategories(data);
-    // }
 
     const getAllProducts = async () => {
         const response = await fetchProducts.get('/produto/ALL');
@@ -78,7 +68,7 @@ export const HookUseContext = ({ children }) => {
     }
 
     const consultaUsuario = async () => {
-        const usuario = await fetchProducts.post('/usuarios',
+        const usuario = await fetchUsers.post('/usuarios',
             {
                 body: usuario,
             }
@@ -90,10 +80,6 @@ export const HookUseContext = ({ children }) => {
         getAllProducts();
     }, []);
 
-    // useEffect(() => {
-    //     getAllCategories();
-    // }, []);
-
     return (
         <DataContext.Provider
             value={{
@@ -102,8 +88,8 @@ export const HookUseContext = ({ children }) => {
                 consultaUsuario,
                 listaProdutos,
                 // categories,
-                itensCarrinho,
-                setItensCarrinho,
+                // itensCarrinho,
+                // setItensCarrinho,
                 carrinhoVisivel,
                 setCarrinhoVisivel,
                 deleteProduct,

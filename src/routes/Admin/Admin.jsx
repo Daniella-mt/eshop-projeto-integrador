@@ -2,7 +2,7 @@ import { useContext } from 'react';
 
 import { Link } from 'react-router-dom';
 
-import { DataContext } from '../../hooks/HookUseContext';
+import { DataContext } from '../../Contexts/HookUseContext';
 
 import Card from '../../components/Card/Card';
 

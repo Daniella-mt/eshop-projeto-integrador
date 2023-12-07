@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 
-import { DataContext } from '../../hooks/HookUseContext';
+import { DataContext } from '../../Contexts/HookUseContext';
 
 import { PiHandbagDuotone } from 'react-icons/pi';
 
@@ -16,7 +16,7 @@ const BotaoCarrinho = () => {
             >
                 <PiHandbagDuotone />
             </button>
-            {itensCarrinho.lenth > 0 && <span>{itensCarrinho.length}</span>}
+            {/* {itensCarrinho.length > 0 && <span>{itensCarrinho.length}</span>} */}
         </div>
     )
 }

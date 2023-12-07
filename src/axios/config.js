@@ -12,4 +12,11 @@ export const fetchCategories = axios.create({
     headers: {
         "Content-Type": "application/json"
     }
-})
+});
+
+export const fetchUsers = axios.create({
+    baseURL: 'https://projetojpsenac.000webhostapp.com/api',
+    headers: {
+        "Content-Type": "application/json"
+    }
+});

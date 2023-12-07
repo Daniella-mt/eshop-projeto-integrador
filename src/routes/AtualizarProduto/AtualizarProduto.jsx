@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from 'react';
 
 import { useParams, useNavigate, Link } from 'react-router-dom';
 
-import { DataContext } from '../../hooks/HookUseContext.jsx';
+import { DataContext } from '../../Contexts/HookUseContext';
 
 import FieldInput from '../../components/FieldInput/FieldInput.jsx';
 import FieldText from '../../components/FieldText/FieldText.jsx';

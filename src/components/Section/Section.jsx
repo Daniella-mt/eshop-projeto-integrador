@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 
 import { Link } from 'react-router-dom';
 
-import { DataContext } from '../../hooks/HookUseContext';
+import { DataContext } from '../../Contexts/HookUseContext';
 
 import { BsBagPlusFill } from "react-icons/bs";
 
@@ -17,14 +17,6 @@ const Section = () => {
 
 	const { listaProdutos } = useContext(DataContext);
 
-	// const addItemCarrinho = (item) => {
-	// 	itensCarrinho.filter((itemAtual) => {
-
-	// 	})
-	// 	if(!itensCarrinho.includes(item)){
-	// 		setItensCarrinho([...itensCarrinho, {...item, qtd}])
-	// 	}
-	// }
 
 	useEffect(() => {
 		const categories = listaProdutos.map((produto) =>
@@ -57,19 +49,12 @@ const Section = () => {
 								produto.section === section
 									?
 									(
-										<div className={styles.card_container}
+
+										<Card
 											key={produto.id}
-										>
-											<Card
-												url={`/produtos/ALL/${produto.id}/info`}
-												produto={{ ...produto }}
-											/>
-											<button type="button"
-												onClick={() => setItensCarrinho([...itensCarrinho, produto])}
-											>
-												<BsBagPlusFill />
-											</button>
-										</div>
+											url={`/produtos/ALL/${produto.id}/info`}
+											produto={{ ...produto }}
+										/>
 									)
 									:
 									(

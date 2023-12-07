@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 
-import { DataContext } from "../../hooks/HookUseContext";
+import { DataContext } from "../../Contexts/HookUseContext";
 
 import { BsFillBagXFill } from "react-icons/bs";
 
@@ -13,6 +13,8 @@ import styles from './CarrinhoItem.module.css';
 const CarrinhoItem = ({ item }) => {
 
     const { itensCarrinho, setItensCarrinho } = useContext(DataContext);
+
+    const [itemCarrinho, setItemCarrinho] = useState({});
 
     const { img, nome, preco, id } = item;
 
@@ -59,7 +61,6 @@ const CarrinhoItem = ({ item }) => {
                     >
                         <IoIosRemoveCircle />
                     </button>
-
                 </div>
             </div>
 

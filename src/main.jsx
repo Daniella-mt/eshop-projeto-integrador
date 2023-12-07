@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import {HookUseContext} from './hooks/HookUseContext.jsx';
+import {HookUseContext} from './Contexts/HookUseContext';
 
 import App from './App.jsx';
 
