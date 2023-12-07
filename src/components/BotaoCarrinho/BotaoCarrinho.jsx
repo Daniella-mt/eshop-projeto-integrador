@@ -7,7 +7,7 @@ import { PiHandbagDuotone } from 'react-icons/pi';
 import styles from './BotaoCarrinho.module.css';
 
 const BotaoCarrinho = () => {
-    const {itensCarrinho, carrinhoVisivel, setCarrinhoVisivel} = useContext(DataContext);
+    const {carrinhoVisivel, setCarrinhoVisivel} = useContext(DataContext);
     
     return (
         <div className={styles.btn_carro}>

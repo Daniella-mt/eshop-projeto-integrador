@@ -10,8 +10,6 @@ export const HookUseContext = ({ children }) => {
 
     const [listaProdutos, setListaProdutos] = useState([]);
 
-    // const [itensCarrinho, setItensCarrinho] = useState([]);
-
     const [carrinhoVisivel, setCarrinhoVisivel] = useState(false);
 
     const createProduct = async (url, section, nome, preco, descricao) => {
@@ -87,9 +85,6 @@ export const HookUseContext = ({ children }) => {
                 setUsuario,
                 consultaUsuario,
                 listaProdutos,
-                // categories,
-                // itensCarrinho,
-                // setItensCarrinho,
                 carrinhoVisivel,
                 setCarrinhoVisivel,
                 deleteProduct,

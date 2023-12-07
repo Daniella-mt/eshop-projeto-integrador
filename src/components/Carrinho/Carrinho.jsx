@@ -2,26 +2,29 @@ import { useContext, useState } from 'react';
 
 import { DataContext } from '../../Contexts/HookUseContext';
 
-// import CarrinhoItem from '../CarrinhoItem/CarrinhoItem';
+import CarrinhoItem from '../CarrinhoItem/CarrinhoItem';
 
 import HookAddToCart from '../../hooks/HookAddToCart';
 
 import styles from './Carrinho.module.css';
 
 const Carrinho = () => {
+    const { carrinhoVisivel } = useContext(DataContext);
 
-    const {cart} = HookAddToCart();
+    const { getLocalStorage } = HookAddToCart();
+    const cart = getLocalStorage();
 
     return (
         <div
-            // className={`${styles.carrinho} ${carrinhoVisivel ? styles.carrinho_ativo : ''}`}
+            className={`${styles.carrinho} ${carrinhoVisivel ? styles.carrinho_ativo : ''}`}
         >
             <div className={styles.carrinho_itens}>
-                {/* {itensCarrinho.map((item) =>
-                    <CarrinhoItem key={item.id}
-                        item={{ ...item }}
-                    />
-                )} */}
+                {cart &&
+                    cart.map((item) =>
+                        <CarrinhoItem key={item.id}
+                            item={{ ...item }}
+                        />
+                    )}
             </div>
             <div className={styles.carrinho_resumo}>
                 <h3>Resumo do carrinho</h3>

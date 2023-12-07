@@ -9,8 +9,6 @@ const HookUseCart = () => {
         }
     );
 
-
-
     const addTocart = (newItem) => {
         setCart(prevState => {
             return [
@@ -38,7 +36,8 @@ const HookUseCart = () => {
     return {
         cart,
         addTocart,
-        setLocalStorageCart
+        setLocalStorageCart,
+        getLocalStorage
     }
 }
 

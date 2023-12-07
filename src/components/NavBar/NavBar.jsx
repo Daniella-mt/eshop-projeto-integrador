@@ -6,7 +6,7 @@ import Pesquisa from '/pesquisa.svg';
 
 import styles from './NavBar.module.css';
 import BotaoCarrinho from '../BotaoCarrinho/BotaoCarrinho';
-import BotaoPerfil from '../BotaoPerfil/BotaoPerfil';
+// import BotaoPerfil from '../BotaoPerfil/BotaoPerfil';
 
 const NavBar = () => {
     const urlHome = useLocation();
@@ -39,7 +39,6 @@ const NavBar = () => {
                             </div>
                             <BotaoCarrinho />
                         </>
-
                     )
                     ||
                     urlHome.pathname === '/novo-produto' &&
