@@ -6,11 +6,13 @@ import styles from './PaginaPadrao.module.css';
 
 const PaginaPadrao = () => {
   return (
-    <div className={styles.pagina_padrao}>
+    <>
+      <div className={styles.pagina_padrao}>
       <Banner />
-      <Section />
-      <Carrinho />
-    </div>
+        <Section />
+        <Carrinho />
+        </div>
+    </>
   )
 }
 

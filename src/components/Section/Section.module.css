@@ -7,7 +7,7 @@
     display: flex;
     justify-content: space-between;
     padding: 0.5rem 0;
-    max-width: 95%;
+    max-width: 85%;
 }
 
 .section_title a{
@@ -22,7 +22,7 @@
 
 .produtos{
     display: flex;
-    gap: 0.5rem;
+    flex-direction: column;
     width: 100%;
 }
 
@@ -34,4 +34,22 @@
     position: absolute;
     top: 5%;
     right: 18%;
+}
+
+@media only screen and (min-width: 1005px){
+    .section_container{
+        margin: 1rem auto;
+        padding: 1rem;
+        width: 100%;
+    }
+    
+    .produtos{
+        display: flex;
+        flex-direction: row;
+        flex-flow: wrap;
+        gap: 1.5rem;
+        justify-content: center;
+        width: 100%;
+    }
+    
 }

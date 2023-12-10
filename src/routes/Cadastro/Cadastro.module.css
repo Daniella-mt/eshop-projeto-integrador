@@ -2,7 +2,8 @@
     align-items: center;
     display: flex;
     flex-direction: column;
-    height: 70vh;
+    height: 100vh;
+    margin-bottom: 1rem;
     padding: 1rem;
     width: 100%;
 }
@@ -10,7 +11,6 @@
 .container_sm h2{
     color: #e4522a;
 }
-    
 
 .custom_form{
     align-items: center;
@@ -26,12 +26,8 @@
 }
 
 .form_floating{
+    margin-bottom: 1rem;
     padding: 0;
-}
-
-.custom_input{
-    margin-bottom: 0.5rem;
-    padding: 0.5rem;
 }
 
 .container_sm p > span a{
@@ -41,4 +37,9 @@
 
 .container_sm p > span a:hover{
     text-decoration: underline #e4522a;
+}
+
+.error{
+    color: red;
+    font-size: 0.8rem;
 }

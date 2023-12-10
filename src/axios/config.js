@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const fetchProducts = axios.create({
-    baseURL: 'https://projetojpsenac.000webhostapp.com/api',
+    baseURL: 'https://projetojpsenac.000webhostapp.com/api/dev',
     headers: {
         "Content-Type": "application/json"
     }

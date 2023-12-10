@@ -2,6 +2,7 @@
     align-items: center;
     display: flex;
     flex-direction: column;
+    height: 100vh;
     width: 100%;
 }
 
@@ -19,6 +20,15 @@
 
 .all_list{
     display: flex;
-    height: 30vh;
+    flex-direction: column;
     width: 80%;
+}
+
+@media only screen and (min-width: 1005px){
+    .all_list{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
 }

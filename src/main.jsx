@@ -1,5 +1,7 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
@@ -14,9 +16,10 @@ import Admin from './routes/Admin/Admin.jsx';
 import Produto from './routes/Produto/Produto.jsx';
 import AtualizarProduto from './routes/AtualizarProduto/AtualizarProduto.jsx';
 import PaginaUsuario from './routes/PaginaUsuario/PaginaUsuario.jsx';
+import ListaTodosProdutos from './routes/ListaTodosProdutos/ListaTodosProdutos.jsx';
+import Cadastro from './routes/Cadastro/Cadastro.jsx';
 
 import './index.css';
-import ListaTodosProdutos from './routes/ListaTodosProdutos/ListaTodosProdutos.jsx';
 
 const router = createBrowserRouter([
 	{
@@ -31,6 +34,10 @@ const router = createBrowserRouter([
 				element: <Login />
 			},
 			{
+				path: '/cadastro',
+				element: <Cadastro />
+			},
+			{
 				path:'/novo-produto',
 				element: <NovoProduto/>
 			},
@@ -43,7 +50,7 @@ const router = createBrowserRouter([
 				element: <Produto/>
 			},
 			{
-				path: '/produtos/edit-produto/:id',
+				path: '/produtos/ALL/edit-produto/:id',
 				element: <AtualizarProduto/>
 			},
 			{

@@ -32,15 +32,16 @@ const NovoProduto = ({ acaoEnviar }) => {
 		setPreco('');
 		setDescricao('');
 
-		// navigate('/admin');
-
-		console.log(urlImg, categoria, nome, preco, descricao);
+		navigate('/admin');
 	}
 
 	return (
 
 		<div>
-				<form onSubmit={(e) => novoProduto(e)}>
+			<FormComponent
+				acaoEnviar={data => novoProduto(data)}
+				value={'Adicionar produto'}
+			>
 				<h2>Adicionar novo produto</h2>
 				<FieldInput
 					label={'Url da Imagem'}
@@ -74,7 +75,7 @@ const NovoProduto = ({ acaoEnviar }) => {
 					change={valor => setDescricao(valor)}
 					obrigatorio={true}
 				/>
-			</form>
+			</FormComponent>
 		</div>
 	)
 }

@@ -1,14 +1,18 @@
 import { useContext, useEffect, useState } from 'react';
 
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 import { DataContext } from '../../Contexts/HookUseContext';
 
 import { BsBagPlusFill } from "react-icons/bs";
 
-import Card from '../Card/Card';
+import CardItem from "../Card/Card";
 
-import styles from './Section.module.css';
+import Card from 'react-bootstrap/Card';
+
+import Placeholder from 'react-bootstrap/Placeholder';
+
+import styles from "./Section.module.css";
 
 const Section = () => {
 	const { itensCarrinho, setItensCarrinho } = useContext(DataContext);
@@ -34,7 +38,19 @@ const Section = () => {
 			{listaProdutos.length === 0
 				?
 				(
-					<p>Carregando...</p>
+					<Card style={{ width: '12rem' }}>
+						<Card.Img variant="top" src="holder.js/100px180" />
+						<Card.Body>
+							<Placeholder as={Card.Title} animation="glow">
+								<Placeholder xs={6} />
+							</Placeholder>
+							<Placeholder as={Card.Text} animation="glow">
+								<Placeholder xs={4} /> <Placeholder xs={4} /> <Placeholder xs={4} />{' '}
+								<Placeholder xs={6} /> <Placeholder xs={8} />
+							</Placeholder>
+							<Placeholder.Button variant="primary" xs={6} />
+						</Card.Body>
+					</Card>
 				)
 				:
 				(sectionList.map((section) =>
@@ -50,7 +66,7 @@ const Section = () => {
 									?
 									(
 
-										<Card
+										<CardItem
 											key={produto.id}
 											url={`/produtos/ALL/${produto.id}/info`}
 											produto={{ ...produto }}
@@ -63,8 +79,9 @@ const Section = () => {
 							)}
 						</div>
 					</section>
+
 				))
-			}
+			} 
 		</>
 	)
 }

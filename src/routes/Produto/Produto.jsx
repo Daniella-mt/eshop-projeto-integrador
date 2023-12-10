@@ -11,6 +11,7 @@ import Card from '../../components/Card/Card';
 import styles from './Produto.module.css';
 
 const Produto = () => {
+
   const { id } = useParams();
 
   const [produto, setProduto] = useState({});

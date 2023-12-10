@@ -32,11 +32,15 @@ export const HookUseContext = ({ children }) => {
     }
 
     const getAllProducts = async () => {
-        const response = await fetchProducts.get('/produto/ALL');
+        try {
+            const response = await fetchProducts.get('/produto/ALL');
 
-        const data = response.data.result.produtos;
-        
-        setListaProdutos(data);
+            const data = response.data.result.produtos;
+            
+            setListaProdutos(data);
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     const deleteProduct = async (id) => {

@@ -1,6 +1,8 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 
 import { DataContext } from "../../Contexts/HookUseContext";
+
+import HookUseCart from "../../hooks/HookAddToCart";
 
 import { BsFillBagXFill } from "react-icons/bs";
 
@@ -16,27 +18,16 @@ const CarrinhoItem = ({ item }) => {
 
     const [itemCarrinho, setItemCarrinho] = useState({});
 
-    const { img, nome, preco, id } = item;
+    const { cart, setCart } = HookUseCart();
 
-    const [qtd, setQtd] = useState(1);
-
-    const addQtd = () => {
-        setQtd(prevQtd => prevQtd + 1);
-    }
-
-    const subQtd = () => {
-        if (qtd > 1) {
-            setQtd(prevQtd => prevQtd - 1);
-        } else {
-            return
-        }
-    }
+    const { img, nome, preco, id, qtd } = item;
 
     const removeItem = (id) => {
-        const itensCarrinhoAtualizado = itensCarrinho.filter((item) =>
-            item.id !== id
-        );
-        setItensCarrinho(itensCarrinhoAtualizado);
+        setCart(
+            cart.filter((item =>
+                item.id !== id
+            ))
+        )
     }
 
     return (
@@ -50,14 +41,12 @@ const CarrinhoItem = ({ item }) => {
                 <div>
                     <button
                         type="button"
-                        onClick={() => addQtd()}
                     >
                         <IoMdAddCircle />
                     </button>
                     <span>{qtd}</span>
                     <button
                         type="button"
-                        onClick={() => subQtd()}
                     >
                         <IoIosRemoveCircle />
                     </button>

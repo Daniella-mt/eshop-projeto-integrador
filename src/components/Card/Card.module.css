@@ -1,5 +1,6 @@
 .container_card{
-    width: 180px;
+    margin-bottom: 1rem;
+    width: 80%;
 }
 
 .card_info{
@@ -24,11 +25,9 @@
     text-decoration: none;
 }
 
-.card_img img{
-    max-width: 150px;
-    transition: ease 200ms;
-}
-
-.card_img:hover{
-    opacity: 0.5;
+@media only screen and (min-width: 1005px){
+    .container_card{
+        margin-bottom: 0;
+        width: 250px;
+    }
 }

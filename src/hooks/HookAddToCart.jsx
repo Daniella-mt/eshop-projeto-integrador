@@ -9,13 +9,31 @@ const HookUseCart = () => {
         }
     );
 
-    const addTocart = (newItem) => {
-        setCart(prevState => {
-            return [
-                ...prevState,
-                { ...newItem, qtd: 1 }
-            ]
+    const addToCart = (newItem) => {
+        cart.find(item => {
+            item.id === newItem.id
+                ?
+                setCart([
+                    {
+                        ...item,
+                        qtd: item.qtd + 1
+                    }
+                ])
+                :
+                setCart(prevState =>
+                    [
+                        ...prevState,
+                        {
+                            ...newItem,
+                            qtd: 1
+                        }
+                    ]
+                )
         });
+
+
+
+
     }
 
     const setLocalStorageCart = () => {
@@ -24,8 +42,9 @@ const HookUseCart = () => {
 
     const getLocalStorage = () => {
         const cart = localStorage.getItem('cart');
-        console.log(cart);
+
         const parsedCart = JSON.parse(cart);
+
         return parsedCart;
     }
 
@@ -35,10 +54,12 @@ const HookUseCart = () => {
 
     return {
         cart,
-        addTocart,
+        setCart,
+        addToCart,
         setLocalStorageCart,
         getLocalStorage
     }
+
 }
 
 export default HookUseCart;

@@ -2,57 +2,101 @@ import { useState, useContext } from 'react';
 
 import { Link } from 'react-router-dom';
 
-import FieldInput from '../../components/FieldInput/FieldInput';
+import { useForm } from 'react-hook-form';
 
-import { DataContext } from '../../Contexts/HookUseContext';
+import HookUsuarioLogin from '../../hooks/HookUsuarioLogin';
+
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import FloatingLabel from 'react-bootstrap/FloatingLabel';
 
 import styles from './Login.module.css';
 
 const Login = () => {
+    const { setUsuario, setSenha, login } = HookUsuarioLogin();
 
-    const { usuario, setUsuario } = useContext(DataContext);
+    const { register, handleSubmit, watch, formState: { errors } } = useForm();
 
-    const [userName, setUserName] = useState('');
-    const [email, setPassword] = useState('');
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        console.log('submitou!');
+    const onSubmit = (data) => {
+        setUsuario({
+            email: data.email,
+            senha: data.password
+        });
+        cadastrarUsuario();
     }
 
     return (
-        <div className={styles.container}>
-            <form onSubmit={(e) => handleSubmit(e)}>
-                <h2>Iniciar sessão</h2>
-                <FieldInput
-                    id={'user'}
-                    name={'email'}
-                    placeholder={'Escreva seu email'}
-                    type={'email'}
-                    valor={userName || ''}
-                    change={valor => setUserName(valor)}
-                    obrigatorio
-                    minLength={15}
-                    pattern={/^[A-Z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/gi}
-                />
-                <FieldInput
-                    placeholder={'Escreva sua senha'}
-                    id={'password'}
-                    name={'password'}
-                    type={'password'}
-                    valor={email || ''}
-                    change={valor => setPassword(valor)}
-                    obrigatorio
-                    minLength={8}
-                    pattern={/"^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$"/}
-                />
-
-                <input type="submit" value={'Enviar'} />
-                <Link to={'/admin'}>
+        <div className={`
+        container-fluid container-sm 
+        ${styles.container_sm}
+        ` }>
+            <h2>Fazer Login</h2>
+            <Form
+                className={`${styles.custom_form}`}
+                onSubmit={handleSubmit(onSubmit)}
+            >
+                <Form.Group controlId="email"
+                    className={`${styles.form_group}`}
+                >
+                    <FloatingLabel
+                        controlId="email"
+                        label="Email"
+                        className={`${styles.form_floating}`}
+                    >
+                        <Form.Control type="email"
+                            placeholder="name@example.com"
+                            className={`${styles.input_email}`}
+                            {...register("email",
+                                {
+                                    required: "Campo nome é obrigatório",
+                                    minLength: {
+                                        value: 10,
+                                        message: 'Este campo deve ter no mínimo 10 caractres.'
+                                    },
+                                    maxLength: {
+                                        value: 30,
+                                        message: "Este campo deve ter no máximo 30 caracteres"
+                                    }
+                                }
+                            )}
+                        />
+                    </FloatingLabel>
+                </Form.Group>
+                <Form.Group
+                    className={`${styles.form_group}`} controlId="password"
+                >
+                    <FloatingLabel
+                        controlId="password"
+                        label="Senha:"
+                        className={`${styles.input_password}`}
+                    >
+                        <Form.Control
+                            type="password"
+                            placeholder="Sua senha"
+                            className={`${styles.custom_input}`}
+                            {...register("password",
+                                {
+                                    required: 'Campo senha é obrigatório',
+                                    minLength: {
+                                        value: 8,
+                                        message: 'Campo senha deve ter no mínimo 8 caracteres.'
+                                    },
+                                    maxLength: {
+                                        value: 12,
+                                        message: `Campo senha deve ter no máximo 12 caracteres.`
+                                    }
+                                })}
+                        />
+                    </FloatingLabel>
+                </Form.Group>
+                <Button variant="primary" type="submit">
                     Entrar
-                </Link>
-            </form>
+                </Button>
+            </Form>
+            <p>
+                Não tem conta? <span><Link to={'/cadastro'}> Cadastre-se
+                </Link></span>
+            </p>
         </div>
     )
 }

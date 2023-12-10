@@ -1,23 +1,37 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 import { DataContext } from '../../Contexts/HookUseContext';
 
-import CarrinhoItem from '../CarrinhoItem/CarrinhoItem';
+import CarrinhoItem from "../CarrinhoItem/CarrinhoItem";
 
-import HookAddToCart from '../../hooks/HookAddToCart';
+import { FaWindowClose } from "react-icons/fa";
+
+import HookUseCart from '../../hooks/HookAddToCart';
 
 import styles from './Carrinho.module.css';
 
 const Carrinho = () => {
-    const { carrinhoVisivel } = useContext(DataContext);
+    const [cart, setCart] = useState([]);
 
-    const { getLocalStorage } = HookAddToCart();
-    const cart = getLocalStorage();
+    const { carrinhoVisivel, setCarrinhoVisivel } = useContext(DataContext);
+
+    const { getLocalStorage } = HookUseCart();
+
+    useEffect(() => {
+        setCart(
+            getLocalStorage()
+        )
+    }, [])
 
     return (
         <div
             className={`${styles.carrinho} ${carrinhoVisivel ? styles.carrinho_ativo : ''}`}
         >
+            <div className={styles.botao_close_mobile}>
+                <FaWindowClose
+                    onClick={() => setCarrinhoVisivel(!carrinhoVisivel)}
+                />
+            </div>
             <div className={styles.carrinho_itens}>
                 {cart &&
                     cart.map((item) =>

@@ -2,37 +2,59 @@ import { Link } from 'react-router-dom';
 
 import HookAddToCart from '../../hooks/HookAddToCart';
 
-import {BsBagPlusFill} from 'react-icons/bs';
+import { BsBagPlusFill } from 'react-icons/bs';
 
 import styles from './Card.module.css';
 
-const Card = ({ produto, url }) => {
+import Button from 'react-bootstrap/Button';
 
-  const {addTocart, setLocalStorageCart} = HookAddToCart();
+import Card from 'react-bootstrap/Card';
+
+const CardItem = ({ produto, url }) => {
+
+  const { addToCart } = HookAddToCart();
 
   const { image, nome, preco, id } = produto;
 
-  const adProduct = () =>{
-    addTocart(produto);
+  const adProduct = () => {
+    addToCart(produto);
   }
 
   return (
-    <div className={styles.container_card}>
+    <Card className={styles.container_card}>
+      <Card.Img variant="top" src={image} />
+      <Button variant="link">
+        <BsBagPlusFill />
+      </Button>
+      <Card.Body>
+        <Card.Title>{nome}</Card.Title>
+        <Card.Text>{preco}</Card.Text>
+        <Link to={url}>
+          <Button variant="primary">Ver produto</Button>
+        </Link>
+      </Card.Body>
+    </Card>
+  )
+}
+
+export default CardItem;
+{/* <div className={styles.container_card}>
+
       <button type="button"
         onClick={() => adProduct(produto)}
       >
         <BsBagPlusFill />
       </button>
       <div className={styles.card_img}>
-        <img src={image} />
+        <div>
+          <img src={image} />
+        </div>
+        <div className={styles.card_info}>
+          <div>
+            <h2>{nome}</h2>
+            <span>{preco}</span>
+            <Link to={url}>Ver produto</Link>
+          </div>
+        </div>
       </div>
-      <div className={styles.card_info}>
-        <h2>{nome}</h2>
-        <span>{preco}</span>
-        <Link to={url}>Ver produto</Link>
-      </div>
-    </div>
-  )
-}
-
-export default Card;
+    </div> */}

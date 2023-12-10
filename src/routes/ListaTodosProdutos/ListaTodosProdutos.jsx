@@ -23,7 +23,7 @@ const ListaTodosProdutos = () => {
                 <h1>Tudo em <span>{section.section}</span></h1>
             </div>
             <div className={styles.all_list}>
-                {
+                    {
                     tudoCategoria.map((item) =>
                         <Card
                             key={item.id}

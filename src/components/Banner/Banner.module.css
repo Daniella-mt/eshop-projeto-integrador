@@ -1,7 +1,10 @@
 .banner_container {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     justify-content: center;
-    height: 300px;
+    height: calc(80vh - 6rem);
     width: 100%;
 }
 
@@ -29,18 +32,12 @@
 }
 
 .promo a {
-    background: #292929;
-    border: 1px solid transparent;
-    color: #f5e239;
+    background: #2a7ae4;
+    color: #fff;
     font-size: 0.8rem;
     margin-top: 0.5rem;
     max-width: 180px;
     padding: 0.5rem 1rem;
     text-align: center;
     text-decoration: none;
-    transition: ease 300ms;
-}
-
-.promo a:hover{
-    border: 1px solid #f5e239;
 }

@@ -1,0 +1,89 @@
+{
+    "msg":[
+       "Conectou com o Banco via GET."
+    ],
+    "result":{
+       "produtos":[
+          {
+             "id":"1",
+             "nome":"Smart TV 75 UHD 4K Samsung ",
+             "preco":"R$ 5.099",
+             "alt":"Smart TV 75 UHD 4K Samsung ",
+             "section":"TV",
+             "descricao":"Processador Crystal 4K",
+             "img":"img/1.png",
+             "user":"thiago"
+          },
+          {
+             "id":"2",
+             "nome":"Smart TV LG QNED 86 4K ",
+             "preco":"R$ 11.299",
+             "alt":"Smart TV LG QNED 86 4K ",
+             "section":"TV",
+             "descricao":"WiFi Bluetooth HDR Inteligência Artificial ",
+             "img":"img/",
+             "user":"João"
+          },
+          {
+             "id":"3",
+             "nome":"Smart TV LED 32 FHD TCL ",
+             "preco":"R$ 1.139",
+             "alt":"Smart TV LED 32 FHD TCL ",
+             "section":"TV",
+             "descricao":"Android TV, Wi-Fi, Bluetooth, Controle Remoto com Comando de Voz, ",
+             "img":"img/",
+             "user":"Daniella"
+          },
+          {
+             "id":"4",
+             "nome":"Apple iPhone 14 ",
+             "preco":"R$ 4.499",
+             "alt":"Apple iPhone 14 ",
+             "section":"Smartphones",
+             "descricao":"Tela Super Retina XDR de 6,1 polegadas Modo Cinema, agora em 4K Dolby Vision até 30 qps ",
+             "img":"img/",
+             "user":"Ellen"
+          },
+          {
+             "id":"5",
+             "nome":"Samsung Galaxy S23 Ultra 5G",
+             "preco":"R$ 7.699",
+             "alt":"Samsung Galaxy S23 Ultra 5G",
+             "section":"Smartphones",
+             "descricao":"256GB Tela 6.8 12GB RAM ",
+             "img":"img/",
+             "user":"Guilherme"
+          },
+          {
+             "id":"6",
+             "nome":"Console Playstation 5 Sony",
+             "preco":"R$ 4.099",
+             "alt":"Console Playstation 5 Sony",
+             "section":"Games e Consoles",
+             "descricao":"SSD 825GB, Controle sem fio DualSense",
+             "img":"img/",
+             "user":"Tiago"
+          },
+          {
+             "id":"7",
+             "nome":"Console Xbox Series X",
+             "preco":"R$ 4.721",
+             "alt":"Console Xbox Series X",
+             "section":"Games e Consoles",
+             "descricao":"4K a 120 FPS: requer conteúdo e exibição compatíveis ",
+             "img":"img/",
+             "user":"Daniella"
+          },
+          {
+             "id":"8",
+             "nome":"Headset ASTRO Gaming A40 TR",
+             "preco":"R$ 809",
+             "alt":"Headset ASTRO Gaming A40 TR",
+             "section":"Games e Consoles",
+             "descricao":"para PS5, PS4, Xbox Series, Xbox One, PC e Mac - Preto/Azul ",
+             "img":"img.png",
+             "user":"Ellen"
+          }
+       ]
+    }
+ }

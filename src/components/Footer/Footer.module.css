@@ -1,97 +1,68 @@
 .container_footer {
-    background-color: #dbdbdb;
-    display: flex;
-    justify-content: center;
-    padding: 1rem;
-}
-
-.footer_logo {
-    align-items: flex-start;
-    display: flex;
-    margin-top: 1rem;
-    width: 20%;
-}
-
-.footer_logo img:nth-child(1) {
-    width: 15%;
-}
-
-.footer_logo img:nth-child(2) {
-    margin-top: 5px;
-    width: 50%;
-}
-
-.nav_footer {
-    margin-top: 1rem;
-    width: 30%;
-}
-
-.nav_footer ul {
-    font-size: 0.6rem;
-}
-
-.nav_footer ul li {
-    list-style: none;
-    margin-bottom: 0.5rem;
-}
-
-.contato_form {
-    margin-top: 1rem;
-    width: 30%;
-}
-
-.contato_form form div {
-    background-color: #fff;
-    border-radius: 0.2rem 0.2rem 0 0;
-    box-shadow: rgba(0, 0, 0, .2) 0 4px 6px 0;
-    margin-bottom: 1rem;
-    padding: 0.2rem;
-}
-
-.contato_form div label {
-    color: #A2A2A2;
+    align-items: center;
+    background-color: #40a9ff;
     display: flex;
     flex-direction: column;
-    font-size: 0.5rem;
-}
-
-.contato_form form input[type="text"] {
-    border: none;
-    padding: 0.5rem;
-    outline: none;
-}
-.contato_form form textarea {
-    border: none;
-    padding: 0.5rem;
-    outline: none;
-    resize: none;
-}
-
-.contato_form form input[type="submit"]{
-    background-color: #2a7ae4;
-    border: none;
-    color: #fff;
-    font-size: 0.7rem;
-    padding: 0.5rem;
-}
-
-.dev {
-    background-color: #fff;
-    padding: 0.5rem;
-    text-align: center;
+    padding: 0.6rem;
     width: 100%;
 }
 
+.container_footer>:first-child{
+    align-items: center;
+    display: flex;
+    height: 20%;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.footer_logo {
+    color: #f49222;
+    height: 50%;
+    text-align: center;
+    width: 40%;
+}
+
+.footer_logo h1{
+    font-size: 1.6rem;
+}
+
+.nav_footer {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+
+.nav_footer ul {
+    font-size: 0.65rem;
+    margin-bottom: 1rem;
+}
+
+.nav_footer ul li {
+    color: #fff;
+    list-style: none;
+    margin-bottom: 0.2rem;
+}
+
+.dev {
+    background-color: transparent;
+    text-align: center;
+    width: 80%;
+}
+
+.dev h2, .dev span{
+    background: transparent;
+    font-size: 0.6rem;
+}
+
 .dev h2 {
-    font-size: 1rem;
+    color: #fff;
     font-weight: normal;
 }
 
-.dev h2,
-.dev span {
-    background-color: #fff;
+.dev span{
+    color: #fff;
 }
 
 .dev h2 span {
-    color: blueviolet;
+    color: #e28d2b;
 }

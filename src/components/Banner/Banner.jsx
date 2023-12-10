@@ -1,19 +1,22 @@
 import { Link } from 'react-router-dom';
 
-import banner from '/img/black-friday-banner.jpg';
+import Carousel from 'react-bootstrap/Carousel';
 
 import styles from './Banner.module.css';
 
 const Banner = () => {
-	const background = {
-		background: `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url(${banner})`,
-		backgroundPosition: 'center',
-		backgroundSize: 'cover'
-	};
-	
-	return (
-		<div className={styles.banner_container} style={background}>
+	// const background = {
+	// 	backgroundImage: `url(${banner})`,
+	// };
 
+	return (
+		<div className={styles.banner_container}>
+{/* 
+			<div className={styles.promo}>
+				<h2>Dezembro Promocional</h2>
+				<p>Produtos selecionados com 33% de desconto</p>
+				<Link>Ver produtos</Link>
+			</div> */}
 		</div>
 	)
 }
