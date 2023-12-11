@@ -6,6 +6,8 @@ import Pesquisa from '/pesquisa.svg';
 
 import logo from '/cclogo.png';
 
+import logoMobile from '/CC-mobile.png';
+
 import styles from './NavBar.module.css';
 
 import BotaoCarrinho from '../BotaoCarrinho/BotaoCarrinho';
