@@ -1,43 +1,4 @@
 .banner_container {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    height: calc(80vh - 6rem);
+    margin-top: 1rem;
     width: 100%;
-}
-
-.promo {
-    background-color: transparent;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    justify-content: flex-end;
-    margin-left: 1rem;
-    padding: 1rem 2rem 1rem 2rem;
-    width: 80%;
-}
-
-.promo h2 {
-    background: transparent;
-    color: #fff;
-    margin-bottom: 0.8rem;
-}
-
-.promo p {
-    background: transparent;
-    color: #fff;
-    margin-bottom: 0.5rem;
-}
-
-.promo a {
-    background: #2a7ae4;
-    color: #fff;
-    font-size: 0.8rem;
-    margin-top: 0.5rem;
-    max-width: 180px;
-    padding: 0.5rem 1rem;
-    text-align: center;
-    text-decoration: none;
 }

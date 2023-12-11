@@ -1,0 +1,25 @@
+.carousel-container.carousel-slide{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.carousel-inner{
+    height: 60vh;
+    width: 100%;
+}
+
+.carousel-inner img{
+    height: 80vh;
+    width: 100%;
+}
+
+.carousel-indicators{
+    display: none;
+}
+
+.carousel-control-next a > span{
+    color: #0f67f7;
+    fill: #0f67f7;
+}
