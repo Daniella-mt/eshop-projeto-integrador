@@ -24,9 +24,10 @@
 
 .produto{
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    width: 80%;
+    /* justify-content: center; */
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    width: 100%;
 }
 
 .card_container{
@@ -34,10 +35,13 @@
 }
 
 .actions{
-    padding: 10px;
+    display: flex;
+    justify-content: center;
     position: relative;
-    top: 40px;
-    right: -70px;
+    top: 10px;
+    right: -120px;
+    width: 130px;
+    z-index: 9;
 }
 
 .actions svg{
@@ -49,4 +53,22 @@
 .actions svg:hover{
     background-color: #aaa;
     fill: #f1f1f1;
+}
+
+@media only screen and(min-width:1005px){
+    .container{
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+    }
+    
+    .produto{
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .card_container{
+        width: 200px;
+    }
 }

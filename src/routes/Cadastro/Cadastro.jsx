@@ -28,7 +28,7 @@ const Cadastro = () => {
     setHidePassword(!hidePassword);
   }
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     setUsuario({
       nome: data.input_name,
       email: data.email,

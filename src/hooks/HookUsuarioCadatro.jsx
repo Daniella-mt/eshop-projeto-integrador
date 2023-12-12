@@ -10,11 +10,16 @@ const useUsuarioCadastro = () => {
 
     const cadastrarUsuario = async () => {
         console.log(usuario);
-        
+
         try {
-            const usuarioPost = await axios.post('https://projetojpsenac.000webhostapp.com/api/dev/usuario/ALL',
+            const usuarioPost = await axios.post('https://projetojpsenac.000webhostapp.com/api/dev/usuario',
                 {
                     body: usuario,
+                },
+                {
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
                 }
             );
             const response = usuarioPost.data;
@@ -24,7 +29,16 @@ const useUsuarioCadastro = () => {
             alert('Cadastro realizado com sucesso!');
 
         } catch (error) {
-            console.error('Erro na requisição POST:', error.message, error.response);
+            console.log('Erro na requisição POST:', error.message, error.response);
+            console.log(JSON.stringify(error));
+            // console.log({ ...error });
+
+            // debugger;
+            // if (error.response) {
+            //     console.log(error.response.data);
+            //     console.log(error.response.status);
+            //     console.log(error.response.headers);
+            // }
         }
     }
 
