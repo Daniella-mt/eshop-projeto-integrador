@@ -12,7 +12,7 @@ const useUsuarioCadastro = () => {
         console.log(usuario);
 
         try {
-            const usuarioPost = await axios.post('https://projetojpsenac.000webhostapp.com/api/dev/usuario',
+            const usuarioPost = await axios.post('https://projetojpsenac.000webhostapp.com/api/dev/acao/I/usuario',
                 {
                     body: usuario,
                 },
