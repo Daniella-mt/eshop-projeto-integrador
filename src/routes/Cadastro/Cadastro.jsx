@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import { Link } from 'react-router-dom';
 
 import { useForm } from "react-hook-form";
@@ -8,14 +10,25 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 
+import { IoEyeOff } from "react-icons/io5";
+
+import { IoEye } from "react-icons/io5";
+
 import styles from './Cadastro.module.css';
 
 const Cadastro = () => {
+
+  const [hidePassword, setHidePassword] = useState(true);
+
   const { setUsuario, cadastrarUsuario } = useUsuarioCadastro();
 
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
-  
-  const onSubmit = (data) =>{
+
+  const showPassword = () => {
+    setHidePassword(!hidePassword);
+  }
+
+  const onSubmit = (data) => {
     setUsuario({
       nome: data.input_name,
       email: data.email,
@@ -79,7 +92,7 @@ const Cadastro = () => {
               placeholder="name@example.com"
               className={`${styles.custom_input}`}
               {...register("email", {
-                required: 'Campo email é obrigatório', 
+                required: 'Campo email é obrigatório',
                 minLength: {
                   value: 10,
                   message: 'Este campo deve ter no mínimo 10 caractres.'
@@ -102,7 +115,7 @@ const Cadastro = () => {
             className={`${styles.form_floating}`}
           >
             <Form.Control
-              type="password"
+              type={`${hidePassword ? 'password' : 'text'}`}
               placeholder="Sua senha"
               className={`${styles.custom_input}`}
               {...register("password",
@@ -122,6 +135,14 @@ const Cadastro = () => {
                   }
                 })}
             />
+            <button
+              type="button"
+              className={styles.hidePassword}
+              onClick={showPassword}
+            >
+              {hidePassword ? <IoEyeOff /> : <IoEye />}
+              
+            </button>
             <span className={styles.error}>{errors.password?.message}</span>
           </FloatingLabel>
         </Form.Group>

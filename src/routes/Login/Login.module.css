@@ -42,3 +42,8 @@
 .container_sm p > span a:hover{
     text-decoration: underline #e4522a;
 }
+
+.hidePassword{
+    border: none;
+    background: none;
+}

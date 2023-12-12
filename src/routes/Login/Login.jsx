@@ -10,12 +10,22 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 
+import { IoEyeOff } from "react-icons/io5";
+
+import { IoEye } from "react-icons/io5";
+
 import styles from './Login.module.css';
 
 const Login = () => {
+    const [hidePassword, setHidePassword] = useState(true);
+
     const { setUsuario, setSenha, login } = HookUsuarioLogin();
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
+
+    const showPassword = () => {
+        setHidePassword(!hidePassword);
+    }
 
     const onSubmit = (data) => {
         setUsuario({
@@ -71,7 +81,7 @@ const Login = () => {
                         className={`${styles.input_password}`}
                     >
                         <Form.Control
-                            type="password"
+                            type={`${hidePassword ? 'password' : 'text'}`}
                             placeholder="Sua senha"
                             className={`${styles.custom_input}`}
                             {...register("password",
@@ -87,6 +97,14 @@ const Login = () => {
                                     }
                                 })}
                         />
+                        <button
+                            type="button"
+                            className={styles.hidePassword}
+                            onClick={showPassword}
+                        >
+                            {hidePassword ? <IoEyeOff /> : <IoEye />}
+
+                        </button>
                     </FloatingLabel>
                 </Form.Group>
                 <Button variant="primary" type="submit">
